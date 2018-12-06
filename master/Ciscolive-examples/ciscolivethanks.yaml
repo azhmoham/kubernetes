@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ciscolivethanksweb
+  labels:
+    app: ciscolivethanks
+spec:
+  selector:
+    matchLabels:
+      app: ciscolivethanks
+      tier: web
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ciscolivethanks
+        tier: web
+    spec:
+      containers:
+      - name: ciscolivethanks-app
+        image: axmohammed/azhar-private:ciscolive-thanks
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ciscolivethanksweb
+  labels:
+    app: ciscolivethanks
+spec:
+  selector:
+    app: ciscolivethanks
+    tier: web
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer

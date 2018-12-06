@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ciscolivewelcomeweb
+  labels:
+    app: ciscolivewelcome
+spec:
+  selector:
+    app: ciscolivewelcome
+    tier: web
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
