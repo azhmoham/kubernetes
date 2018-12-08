@@ -3,7 +3,12 @@ kind: Ingress
 metadata:
  name: test-ingress
 spec:
- rules:
+  tls:
+  - hosts:
+    - web
+    secretName: ciscolive-secret
+
+  rules:
    - host: web
      http:
        paths:
@@ -14,4 +19,4 @@ spec:
          - path: /thanks/
            backend:
              serviceName: ciscolivethanksweb
-             servicePort: 80
+servicePort: 80
