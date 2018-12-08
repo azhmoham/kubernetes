@@ -7,7 +7,6 @@ spec:
   - hosts:
     - web
     secretName: ciscolive-secret
-
   rules:
    - host: web
      http:
