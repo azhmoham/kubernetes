@@ -8,7 +8,7 @@ spec:
     - ciscolive.example.com
     secretName: ciscolive-secret
   rules:
-  - host: ciscolive.com
+  - host: www.ciscolive.com
     http:
       paths:
       - path: /welcome/
