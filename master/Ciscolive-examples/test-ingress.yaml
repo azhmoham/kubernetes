@@ -19,4 +19,4 @@ spec:
          - path: /thanks/
            backend:
              serviceName: ciscolivethanksweb
-servicePort: 80
+             servicePort: 80
