@@ -13,5 +13,5 @@ spec:
              servicePort: 80
          - path: /thanks/
            backend:
-             serviceName: ciscolivethankseweb
+             serviceName: ciscolivethanksweb
              servicePort: 80
