@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
- name: test-ingress
+ name: web-ingress
 spec:
-  tls:
+tls:
   - hosts:
     - web
     secretName: ciscolive-secret
-  rules:
+ rules:
    - host: web
      http:
        paths:
