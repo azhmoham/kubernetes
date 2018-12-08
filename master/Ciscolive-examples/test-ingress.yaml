@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: test-ingress
+spec:
+  tls:
+  - hosts:
+    - web
+    secretName: ciscolive-secret
+
+  rules:
+   - host: web
+     http:
+       paths:
+         - path: /welcome/
+           backend:
+             serviceName: ciscolivewelcomeweb
+             servicePort: 80
+         - path: /thanks/
+           backend:
+             serviceName: ciscolivethanksweb
+             servicePort: 80
