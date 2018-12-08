@@ -3,11 +3,11 @@ kind: Ingress
 metadata:
  name: web-ingress
 spec:
-tls:
+  tls:
   - hosts:
     - web
     secretName: ciscolive-secret
- rules:
+  rules:
    - host: web
      http:
        paths:
