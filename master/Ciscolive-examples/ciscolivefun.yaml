@@ -1,24 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: ciscolivewelcomeweb
+  name: ciscolivefunweb
   labels:
-    app: ciscolivewelcome
+    app: ciscolivefun
 spec:
   selector:
     matchLabels:
-      app: ciscolivewelcome
+      app: ciscolivefun
       tier: web
   replicas: 3
   template:
     metadata:
       labels:
-        app: ciscolivewelcome
+        app: ciscolivefun
         tier: web
     spec:
       containers:
-      - name: ciscolivewelcome-app
-        image: axmohammed/azhar-private:ciscolive-welcome
+      - name: ciscolivefun-app
+        image: axmohammed/azhar-private:ciscolive-fun
         ports:
         - containerPort: 8080
       imagePullSecrets:
@@ -27,12 +27,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ciscolivewelcomeweb
+  name: ciscolivefunweb
   labels:
-    app: ciscolivewelcome
+    app: ciscolivefun
 spec:
   selector:
-    app: ciscolivewelcome
+    app: ciscolivefun
     tier: web
   ports:
   - port: 80
