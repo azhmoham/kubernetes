@@ -11,11 +11,11 @@ spec:
   - host: ciscolive.example.com
     http:
       paths:
-      - path: /fun/
+      - path: /fun
         backend:
           serviceName: ciscolivefunweb
           servicePort: 80
-      - path: /thanks/
+      - path: /thanks
         backend:
           serviceName: ciscolivethanksweb
           servicePort: 80
