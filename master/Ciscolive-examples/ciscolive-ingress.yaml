@@ -13,7 +13,7 @@ spec:
       paths:
       - path: /fun/
         backend:
-          serviceName: ciscolivewelcomeweb
+          serviceName: ciscolivefunweb
           servicePort: 80
       - path: /thanks/
         backend:
